@@ -35,14 +35,21 @@ export default function Sidebar({ children } : PropsWithChildren) {
 
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="flex-1 px-3 mt-3">
-            {PAGES.map((page) => (
+          {PAGES.map((page) => {
+            
+            // Added conditional to only show detail page icon in sidebar if it is the current page
+            if (page.label === 'Details' && currentPah != page.href) return null;
+
+            return (
               <SidebarItem
                 key={page.href}
                 icon={page.icon}
                 text={page.label}
                 href={page.href}
                 active={currentPah === page.href}
-            />))}
+              />
+            );
+          })}
           </ul>
         </SidebarContext.Provider>
 

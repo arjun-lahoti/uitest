@@ -3,8 +3,9 @@ import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 import React, { PropsWithChildren } from 'react'
 import { FiBriefcase } from 'react-icons/fi';
-import { HiOutlineUserGroup } from 'react-icons/hi';
+import { HiOutlineUserGroup, HiOutlineViewList } from 'react-icons/hi';
 
+// Added detail page to PAGES array
 export const PAGES = [
 	{
 		label: 'Employees',
@@ -15,6 +16,11 @@ export const PAGES = [
     label: 'Jobs',
     href: '/job',
     icon: FiBriefcase
+  },
+  {
+    label: 'Details',
+    href: '/detail',
+    icon: HiOutlineViewList
   },
 ]
 

@@ -26,6 +26,8 @@ async function getJobData() {
     department: job.departments.name
   }))
 }
+
+
 export default async function JobPage() {
   const data = await getJobData()
 

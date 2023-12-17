@@ -5,6 +5,8 @@ import { createServerClient } from "@supabase/ssr"
 import { PostgrestError } from '@supabase/supabase-js'
 import { Database } from "@/types/supabase"
 import { supabaseUtils } from "@/lib/utils"
+
+
 export type DbResult<T> = T extends PromiseLike<infer U> ? U : never
 export type DbResultOk<T> = T extends PromiseLike<{ data: infer U }> ? Exclude<U, null> : never
 export type DbResultErr = PostgrestError
@@ -55,6 +57,7 @@ async function getEmployeeData(): Promise<Employee[]> {
 
 
 export default async function EmployeePage() {
+
   const data = await getEmployeeData()
 
   return (
